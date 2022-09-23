@@ -25,16 +25,22 @@ const Footer = () => {
           <a href="https://aashishpanthi.info.np">Aashish Panthi</a>
         </p>
         <div className={styles.authorLinks}>
-          <a href="" title="Find on GitHub">
+          <a href="https://github.com/aashishpanthi" title="Find on GitHub">
             <GitHubIcon />
           </a>
-          <a href="" title="Find on Twitter">
+          <a href="https://twitter.com/aashishpanthi11" title="Find on Twitter">
             <TwitterIcon />
           </a>
-          <a href="" title="Connect on Linkedin">
+          <a
+            href="https://www.linkedin.com/in/aashishpanthi/"
+            title="Connect on Linkedin"
+          >
             <LinkedInIcon />
           </a>
-          <a href="" title="Follow on Instagram">
+          <a
+            href="https://www.instagram.com/aashishpanthi11/"
+            title="Follow on Instagram"
+          >
             <InstagramIcon />
           </a>
         </div>
