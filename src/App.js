@@ -1,11 +1,8 @@
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <p>Know your number of lines of code</p>
-      </header>
-    </div>
-  );
-}
+// routes
+import Router from "./routes";
+
+const App = () => {
+  return <Router />;
+};
 
 export default App;
