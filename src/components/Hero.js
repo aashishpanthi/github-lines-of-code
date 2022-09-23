@@ -25,7 +25,7 @@ const Hero = () => {
         </button>
       </div>
       <Modal open={loginOpen} setOpen={setLoginOpen}>
-        <Box sx={{ p: 4, textAlign: "center", maxWidth: "95%" }}>
+        <Box sx={{ p: 2, textAlign: "center" }}>
           <Typography id="transition-modal-title" variant="h6" component="h2">
             Login with GitHub
           </Typography>
@@ -46,8 +46,8 @@ const Hero = () => {
       </Modal>
       <Modal open={videoOpen} setOpen={setvideoOpen}>
         <iframe
-          width="550"
-          height="315"
+          width="650"
+          height="375"
           src="https://www.youtube.com/embed/lEi_XBg2Fpk"
           title="YouTube video player"
           frameborder="0"
