@@ -1,0 +1,60 @@
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 25px 10px;
+  margin-top: 75px;
+}
+
+.hero__title {
+  font-size: 48px;
+  font-weight: 600;
+  color: #111;
+  margin: 0;
+}
+
+.hero__subtitle {
+  max-width: 550px;
+  color: #555;
+  text-align: center;
+  line-height: 28px;
+  font-weight: lighter;
+}
+
+.hero__buttons {
+  display: flex;
+  align-items: center;
+  margin: 25px 0;
+}
+
+.hero__buttons button {
+  font-size: 16px;
+  border-radius: 10px;
+  text-align: center;
+  width: 185px;
+  height: 48px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.loginBtn {
+  border: none;
+  background-color: #0284fe;
+  color: white;
+  margin-right: 10px;
+}
+
+.videoBtn {
+  background: none;
+  border: 1px solid #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  color: #666;
+}
+
+.videoBtn span {
+  margin-left: 5px;
+}
