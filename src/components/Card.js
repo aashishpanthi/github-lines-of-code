@@ -13,6 +13,15 @@ const Card = ({ data }) => {
   const formattedPublicRepo = formatter.format(publicRepo);
   const formattedPrivateRepo = formatter.format(privateRepo);
 
+  let totalLines_forLineGraph = 0;
+
+  languages.map((language) => {
+    console.log(language.lines);
+    totalLines_forLineGraph += language.lines;
+  });
+
+  const colors = ["#FFC100", "#1E9ADF", "#96C69F", "#E6EBED", "#593C97"];
+
   return (
     <div className={styles.card}>
       <div className={styles.card__main}>
@@ -34,13 +43,29 @@ const Card = ({ data }) => {
       </div>
       <div className={styles.card__body}>
         <h2>Most Used Languages</h2>
-        <div className={styles.lineGraph}></div>
+        <div className={styles.lineGraph}>
+          {languages.map((language, i) => (
+            <span
+              className={styles.languagePart}
+              key={language.name}
+              style={{
+                width: `${(language.lines / totalLines_forLineGraph) * 100}%`,
+                backgroundColor: colors[i],
+              }}
+            ></span>
+          ))}
+        </div>
         <div className={styles.languages}>
-          {languages.map((language) => (
+          {languages.map((language, i) => (
             <p className={styles.language} key={language.name}>
-              <span className={styles.bubble}></span>
+              <span
+                className={styles.bubble}
+                style={{ backgroundColor: colors[i] }}
+              ></span>
               <span className={styles.languageName}>{language.name}</span>
-              <span className={styles.languageLines}>{language.lines}</span>
+              <span className={styles.languageLines}>
+                {((language.lines / totalLines_forLineGraph) * 100).toFixed(2)}%
+              </span>
             </p>
           ))}
         </div>

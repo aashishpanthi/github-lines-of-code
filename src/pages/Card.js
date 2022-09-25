@@ -12,23 +12,23 @@ const data = {
   languages: [
     {
       name: "JavaScript",
-      lines: 100000,
+      lines: 100,
     },
     {
       name: "Python",
-      lines: 2500,
+      lines: 50,
     },
     {
       name: "C#",
-      lines: 200,
+      lines: 20,
     },
     {
       name: "HTML",
-      lines: 2000,
+      lines: 75,
     },
     {
       name: "Java",
-      lines: 20000,
+      lines: 40,
     },
   ],
 };
