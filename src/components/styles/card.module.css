@@ -16,7 +16,16 @@
 }
 
 .main_chart {
-  width: 150px;
+  width: 155px;
+  position: relative;
+}
+
+.totalLines {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 20px;
 }
 
 .main_stats {
@@ -37,6 +46,7 @@
 .card__body h2 {
   font-size: 20px;
   margin: 10px 0;
+  margin-top: 25px;
   font-weight: normal;
 }
 
