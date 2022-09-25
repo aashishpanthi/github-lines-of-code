@@ -21,7 +21,7 @@ const Card = ({ data }) => {
           <div className={styles.totalLines}>{formattedTotalLines}</div>
         </div>
         <div className={styles.main_stats}>
-          <h3>
+          <h3 style={{ color: "#cbbaba" }}>
             Total lines of code: <span>{formattedTotalLines}</span>
           </h3>
           <h3 style={{ color: "#fe3533" }}>

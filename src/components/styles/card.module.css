@@ -7,6 +7,9 @@
   height: 315px;
   position: relative;
   overflow: hidden;
+  box-shadow: 5px 0px 25px 5px rgba(26, 27, 39, 0.35);
+  -webkit-box-shadow: 5px 0px 25px 5px rgba(26, 27, 39, 0.35);
+  -moz-box-shadow: 5px 0px 25px 5px rgba(26, 27, 39, 0.35);
 }
 
 .card__main {
@@ -48,6 +51,14 @@
   margin: 10px 0;
   margin-top: 25px;
   font-weight: normal;
+}
+
+.lineGraph {
+  width: 300px;
+  height: 5px;
+  background-color: #fff;
+  border-radius: 5px;
+  margin-bottom: 10px;
 }
 
 .languages {
