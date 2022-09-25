@@ -7,8 +7,8 @@ const data = {
   username: "aashishpanthi",
   photo: "https://avatars.githubusercontent.com/u/60884239?v=4",
   totalLines: 102000,
-  publicRepo: 100,
-  privateRepo: 10,
+  publicRepo: 42000,
+  privateRepo: 60000,
   languages: [
     {
       name: "JavaScript",

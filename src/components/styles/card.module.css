@@ -12,15 +12,21 @@
 .card__main {
   display: flex;
   margin-bottom: 10px;
+  align-items: center;
+}
+
+.main_chart {
+  width: 150px;
 }
 
 .main_stats {
-  margin-left: 10px;
+  margin-left: 25px;
 }
 
 .main_stats h3 {
   font-size: 16px;
-  margin-bottom: 10px;
+  margin: 0;
+  margin-bottom: 5px;
   font-weight: normal;
 }
 
@@ -30,7 +36,7 @@
 
 .card__body h2 {
   font-size: 20px;
-  margin-bottom: 10px;
+  margin: 10px 0;
   font-weight: normal;
 }
 
@@ -55,17 +61,17 @@
 }
 
 .languageName {
-  font-size: 13px;
+  font-size: 14px;
 }
 
 .languageLines {
   margin-left: 10px;
-  font-size: 8px;
+  font-size: 10px;
 }
 
 .avatar {
   border-radius: 50%;
-  border: 5px solid blue;
+  border: 5px solid #607ce0;
   width: 250px;
   height: 250px;
   overflow: hidden;
@@ -84,5 +90,5 @@
 .username {
   position: absolute;
   bottom: 0px;
-  right: 10px;
+  right: 15px;
 }

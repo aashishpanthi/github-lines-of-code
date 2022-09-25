@@ -1,4 +1,5 @@
 import styles from "./styles/card.module.css";
+import DoughNutChart from "./DoughNutChart";
 
 const Card = ({ data }) => {
   const { username, photo, totalLines, publicRepo, privateRepo, languages } =
@@ -6,7 +7,9 @@ const Card = ({ data }) => {
   return (
     <div className={styles.card}>
       <div className={styles.card__main}>
-        <div className={styles.main_chart}></div>
+        <div className={styles.main_chart}>
+          <DoughNutChart data={[publicRepo, privateRepo]} />
+        </div>
         <div className={styles.main_stats}>
           <h3>
             Total lines of code: <span>{totalLines}</span>
