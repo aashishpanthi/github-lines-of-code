@@ -9,6 +9,7 @@ import NotFound from "./pages/Page404";
 import Home from "./pages/Home";
 import Dashboard from "./pages/Dashboard";
 import Card from "./pages/Card";
+import Login from "./pages/Login";
 // ----------------------------------------------------------------------
 
 export default function Router() {
@@ -26,6 +27,10 @@ export default function Router() {
     {
       path: "/card",
       element: <Card />,
+    },
+    {
+      path: "/login",
+      element: <Login />,
     },
     { path: "*", element: <NotFound /> },
   ]);
