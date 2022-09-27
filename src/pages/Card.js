@@ -1,10 +1,11 @@
-import { Button } from "@mui/material";
-import { useEffect, useCallback, useRef } from "react";
+import { Button, IconButton, Snackbar } from "@mui/material";
+import { useEffect, useCallback, useRef, useState } from "react";
 import { useSearchParams, useNavigate } from "react-router-dom";
 import CardPiece from "../components/Card";
 import styles from "./styles/card.module.css";
-import { toPng, toSvg } from "html-to-image";
+import { toPng } from "html-to-image";
 import { copyImageToClipboard } from "copy-image-clipboard";
+import CloseIcon from "@mui/icons-material/Close";
 
 const data = {
   username: "aashishpanthi",
@@ -38,7 +39,16 @@ const data = {
 
 const Card = () => {
   const navigate = useNavigate();
+
+  //create ref for the card
   const ref = useRef(null);
+
+  // state for the toast
+  const [toast, setToast] = useState({
+    open: false,
+    message: "",
+    severity: "",
+  });
 
   const [searchParams] = useSearchParams();
   const query = searchParams.get("user");
@@ -49,16 +59,28 @@ const Card = () => {
     }
   }, [query, navigate]);
 
+  const openToast = (message, severity) => {
+    setToast({ message, severity, open: true });
+  };
+
+  const closeToast = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+
+    setToast({ message: "", severity: "", open: false });
+  };
+
   const copyToClipboard = async () => {
     toPng(ref.current)
       .then(async (dataUrl) => {
         try {
           copyImageToClipboard(dataUrl)
             .then(() => {
-              console.log("Image Copied");
+              openToast("Image Copied", "success");
             })
             .catch((e) => {
-              console.log("Error: ", e.message);
+              openToast(`Error: ${e.message}`, "error");
             });
         } catch (error) {
           console.log(error);
@@ -81,15 +103,29 @@ const Card = () => {
         link.download = `${data.username}-lines-of-code-card.png`;
         link.href = dataUrl;
         link.click();
+
+        openToast("Download started", "success");
       })
       .catch((err) => {
         console.log(err);
       });
   }, [ref]);
 
+  // action buttons for the toast
+  const action = (
+    <IconButton
+      size="small"
+      aria-label="close"
+      color="inherit"
+      onClick={closeToast}
+    >
+      <CloseIcon fontSize="small" />
+    </IconButton>
+  );
+
   return (
     <div className={styles.container}>
-      <div className={styles.card} ref={ref} id="card">
+      <div className={styles.card} ref={ref}>
         <CardPiece data={data} />
       </div>
 
@@ -112,6 +148,15 @@ const Card = () => {
           Copy to Clipboard
         </Button>
       </div>
+
+      <Snackbar
+        open={toast.open}
+        autoHideDuration={3000}
+        onClose={closeToast}
+        message={toast.message}
+        action={action}
+        severity={toast.severity}
+      />
     </div>
   );
 };

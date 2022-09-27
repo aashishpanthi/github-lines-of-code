@@ -33,8 +33,6 @@ const DoughNutChart = ({ data }) => {
                 label += formatter.format(
                   context.formattedValue.replace(/,/g, "")
                 );
-
-                console.log(label);
                 return label;
               },
             },

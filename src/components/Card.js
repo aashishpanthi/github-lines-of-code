@@ -16,7 +16,6 @@ const Card = ({ data }) => {
   let totalLines_forLineGraph = 0;
 
   languages.map((language) => {
-    console.log(language.lines);
     totalLines_forLineGraph += language.lines;
   });
 
