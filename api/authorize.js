@@ -5,6 +5,7 @@ const getUserData = require("./utils/getUserData");
 const getRepos = require("./utils/getRepos");
 const getSha = require("./utils/getSha");
 const getFiles = require("./utils/getFiles");
+const getTotalLines = require("./utils/getTotalLines");
 
 const authorize = async (req, res) => {
   const code = req.query.code;
@@ -34,6 +35,11 @@ const authorize = async (req, res) => {
             access_token
           );
 
+          // add the branch name to the files
+          files.forEach((file) => {
+            file.branch = repo.default_branch;
+          });
+
           console.log(`Total files of ${repo.name} are: ${files.length}`);
           totalFiles.push(...files);
         }
@@ -46,8 +52,12 @@ const authorize = async (req, res) => {
         console.log(error);
       }
     }
-
     console.log("totalFiles: ", totalFiles.length);
+
+    // calculate the lines of code
+    const totalLines = await getTotalLines(totalFiles, access_token);
+
+    console.log("Total lines of code: ", totalLines);
   } catch (error) {
     console.log(error);
   }

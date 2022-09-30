@@ -39,7 +39,7 @@ const getFiles = async (url, request, access_token) => {
     await filess(folder);
   }
 
-  const programming_files = getProgrammingFiles(totalFiles);
+  const programming_files = await getProgrammingFiles(totalFiles);
 
   return programming_files;
 };

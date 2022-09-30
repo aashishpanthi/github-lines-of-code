@@ -1,22 +1,28 @@
 const languages = require("./languages");
 
-const getProgrammingFiles = (files) => {
-  files.filter((file) => {
-    const extension = file.path.split(".").pop();
+const getProgrammingFiles = async (files) => {
+  console.log("files to loop: ", files.length);
+
+  const actualFiles = files.filter((file) => {
+    const extension = `.${file.path.split(".").pop()}`;
 
     // return the file if it's a programming language
     for (const language of languages) {
-      for (const ext of language.extensions) {
-        if (ext === extension && language.type === "programming") {
-          return {
-            size: file.size,
-            language: language.name,
-            url: file.url,
-          };
-        }
+      if (
+        language.extensions.includes(extension) &&
+        language.type === "programming"
+      ) {
+        return {
+          size: file.size,
+          language: language.name,
+          url: file.url,
+          path: file.path,
+        };
       }
     }
   });
+
+  return actualFiles;
 };
 
 module.exports = getProgrammingFiles;

@@ -20,11 +20,6 @@ const languages = [
     extensions: [".g4"],
   },
   {
-    name: "API Blueprint",
-    type: "markup",
-    extensions: [".apib"],
-  },
-  {
     name: "APL",
     type: "programming",
     extensions: [".apl", ".dyalog"],
@@ -60,15 +55,6 @@ const languages = [
     extensions: [".als"],
   },
   {
-    name: "Ant Build System",
-    type: "data",
-  },
-  {
-    name: "ApacheConf",
-    type: "markup",
-    extensions: [".apacheconf", ".vhost"],
-  },
-  {
     name: "Apex",
     type: "programming",
     extensions: [".cls"],
@@ -87,11 +73,6 @@ const languages = [
     name: "Arduino",
     type: "programming",
     extensions: [".ino"],
-  },
-  {
-    name: "AsciiDoc",
-    type: "prose",
-    extensions: [".asciidoc", ".adoc", ".asc"],
   },
   {
     name: "AspectJ",
@@ -210,11 +191,6 @@ const languages = [
     ],
   },
   {
-    name: "C-ObjDump",
-    type: "data",
-    extensions: [".c-objdump"],
-  },
-  {
     name: "C2hs Haskell",
     type: "programming",
     extensions: [".chs"],
@@ -233,16 +209,6 @@ const languages = [
     name: "COBOL",
     type: "programming",
     extensions: [".cob", ".cbl", ".ccp", ".cobol", ".cpy"],
-  },
-  {
-    name: "CSS",
-    type: "markup",
-    extensions: [".css"],
-  },
-  {
-    name: "CSV",
-    type: "data",
-    extensions: [".csv"],
   },
   {
     name: "Cap'n Proto",
@@ -354,25 +320,14 @@ const languages = [
     extensions: [".coq", ".v"],
   },
   {
-    name: "Cpp-ObjDump",
-    type: "data",
-    extensions: [
-      ".cppobjdump",
-      ".c++-objdump",
-      ".c++objdump",
-      ".cpp-objdump",
-      ".cxx-objdump",
-    ],
-  },
-  {
-    name: "Creole",
-    type: "prose",
-    extensions: [".creole"],
-  },
-  {
     name: "Crystal",
     type: "programming",
     extensions: [".cr"],
+  },
+  {
+    name: "CSS",
+    type: "programming",
+    extensions: [".css"],
   },
   {
     name: "Cucumber",
@@ -400,11 +355,6 @@ const languages = [
     extensions: [".d", ".di"],
   },
   {
-    name: "D-ObjDump",
-    type: "data",
-    extensions: [".d-objdump"],
-  },
-  {
     name: "DIGITAL Command Language",
     type: "programming",
     extensions: [".com"],
@@ -415,34 +365,14 @@ const languages = [
     extensions: [".dm"],
   },
   {
-    name: "DNS Zone",
-    type: "data",
-    extensions: [".zone", ".arpa"],
-  },
-  {
     name: "DTrace",
     type: "programming",
     extensions: [".d"],
   },
   {
-    name: "Darcs Patch",
-    type: "data",
-    extensions: [".darcspatch", ".dpatch"],
-  },
-  {
     name: "Dart",
     type: "programming",
     extensions: [".dart"],
-  },
-  {
-    name: "Diff",
-    type: "data",
-    extensions: [".diff", ".patch"],
-  },
-  {
-    name: "Dockerfile",
-    type: "data",
-    extensions: [".dockerfile"],
   },
   {
     name: "Dogescript",
@@ -468,16 +398,6 @@ const languages = [
     name: "ECLiPSe",
     type: "programming",
     extensions: [".ecl"],
-  },
-  {
-    name: "Eagle",
-    type: "markup",
-    extensions: [".sch", ".brd"],
-  },
-  {
-    name: "Ecere Projects",
-    type: "data",
-    extensions: [".epj"],
   },
   {
     name: "Eiffel",
@@ -545,11 +465,6 @@ const languages = [
     extensions: [".fs"],
   },
   {
-    name: "Formatted",
-    type: "data",
-    extensions: [".for", ".eam.fs"],
-  },
-  {
     name: "Forth",
     type: "programming",
     extensions: [".fth", ".4th", ".f", ".for", ".forth", ".fr", ".frt", ".fs"],
@@ -563,11 +478,6 @@ const languages = [
     name: "Frege",
     type: "programming",
     extensions: [".fr"],
-  },
-  {
-    name: "G-code",
-    type: "data",
-    extensions: [".g", ".gco", ".gcode"],
   },
   {
     name: "GAMS",
@@ -632,11 +542,6 @@ const languages = [
     extensions: [".eclass"],
   },
   {
-    name: "Gettext Catalog",
-    type: "prose",
-    extensions: [".po", ".pot"],
-  },
-  {
     name: "Glyph",
     type: "programming",
     extensions: [".glf"],
@@ -667,58 +572,9 @@ const languages = [
     extensions: [".grace"],
   },
   {
-    name: "Gradle",
-    type: "data",
-    extensions: [".gradle"],
-  },
-  {
     name: "Grammatical Framework",
     type: "programming",
     extensions: [".gf"],
-  },
-  {
-    name: "Graph Modeling Language",
-    type: "data",
-    extensions: [".gml"],
-  },
-  {
-    name: "GraphQL",
-    type: "data",
-    extensions: [".graphql"],
-  },
-  {
-    name: "Graphviz (DOT)",
-    type: "data",
-    extensions: [".dot", ".gv"],
-  },
-  {
-    name: "Groff",
-    type: "markup",
-    extensions: [
-      ".man",
-      ".1",
-      ".1in",
-      ".1m",
-      ".1x",
-      ".2",
-      ".3",
-      ".3in",
-      ".3m",
-      ".3qt",
-      ".3x",
-      ".4",
-      ".5",
-      ".6",
-      ".7",
-      ".8",
-      ".9",
-      ".l",
-      ".me",
-      ".ms",
-      ".n",
-      ".rno",
-      ".roff",
-    ],
   },
   {
     name: "Groovy",
@@ -741,49 +597,9 @@ const languages = [
     extensions: [".hlsl", ".fx", ".fxh", ".hlsli"],
   },
   {
-    name: "HTML",
-    type: "markup",
-    extensions: [".html", ".htm", ".html.hl", ".inc", ".st", ".xht", ".xhtml"],
-  },
-  {
-    name: "HTML+Django",
-    type: "markup",
-    extensions: [".mustache", ".jinja"],
-  },
-  {
-    name: "HTML+EEX",
-    type: "markup",
-    extensions: [".eex"],
-  },
-  {
-    name: "HTML+ERB",
-    type: "markup",
-    extensions: [".erb", ".erb.deface"],
-  },
-  {
-    name: "HTML+PHP",
-    type: "markup",
-    extensions: [".phtml"],
-  },
-  {
-    name: "HTTP",
-    type: "data",
-    extensions: [".http"],
-  },
-  {
     name: "Hack",
     type: "programming",
     extensions: [".hh", ".php"],
-  },
-  {
-    name: "Haml",
-    type: "markup",
-    extensions: [".haml", ".haml.deface"],
-  },
-  {
-    name: "Handlebars",
-    type: "markup",
-    extensions: [".handlebars", ".hbs"],
   },
   {
     name: "Harbour",
@@ -799,6 +615,11 @@ const languages = [
     name: "Haxe",
     type: "programming",
     extensions: [".hx", ".hxsl"],
+  },
+  {
+    name: "HTML",
+    type: "programming",
+    extensions: [".html", ".htm"],
   },
   {
     name: "Hy",
@@ -819,16 +640,6 @@ const languages = [
     name: "IGOR Pro",
     type: "programming",
     extensions: [".ipf"],
-  },
-  {
-    name: "INI",
-    type: "data",
-    extensions: [".ini", ".cfg", ".prefs", ".pro", ".properties"],
-  },
-  {
-    name: "IRC log",
-    type: "data",
-    extensions: [".irclog", ".weechatlog"],
   },
   {
     name: "Idris",
@@ -861,10 +672,6 @@ const languages = [
     extensions: [".thy"],
   },
   {
-    name: "Isabelle ROOT",
-    type: "programming",
-  },
-  {
     name: "J",
     type: "programming",
     extensions: [".ijs"],
@@ -875,21 +682,6 @@ const languages = [
     extensions: [".flex", ".jflex"],
   },
   {
-    name: "JSON",
-    type: "data",
-    extensions: [".json", ".geojson", ".lock", ".topojson"],
-  },
-  {
-    name: "JSON5",
-    type: "data",
-    extensions: [".json5"],
-  },
-  {
-    name: "JSONLD",
-    type: "data",
-    extensions: [".jsonld"],
-  },
-  {
     name: "JSONiq",
     type: "programming",
     extensions: [".jq"],
@@ -898,11 +690,6 @@ const languages = [
     name: "JSX",
     type: "programming",
     extensions: [".jsx"],
-  },
-  {
-    name: "Jade",
-    type: "markup",
-    extensions: [".jade"],
   },
   {
     name: "Jasmin",
@@ -963,11 +750,6 @@ const languages = [
     extensions: [".jl"],
   },
   {
-    name: "Jupyter Notebook",
-    type: "markup",
-    extensions: [".ipynb"],
-  },
-  {
     name: "KRL",
     type: "programming",
     extensions: [".krl"],
@@ -976,11 +758,6 @@ const languages = [
     name: "KiCad",
     type: "programming",
     extensions: [".sch", ".brd", ".kicad_pcb"],
-  },
-  {
-    name: "Kit",
-    type: "markup",
-    extensions: [".kit"],
   },
   {
     name: "Kotlin",
@@ -1018,19 +795,9 @@ const languages = [
     extensions: [".lasso", ".las", ".lasso8", ".lasso9", ".ldml"],
   },
   {
-    name: "Latte",
-    type: "markup",
-    extensions: [".latte"],
-  },
-  {
     name: "Lean",
     type: "programming",
     extensions: [".lean", ".hlean"],
-  },
-  {
-    name: "Less",
-    type: "markup",
-    extensions: [".less"],
   },
   {
     name: "Lex",
@@ -1046,21 +813,6 @@ const languages = [
     name: "Limbo",
     type: "programming",
     extensions: [".b", ".m"],
-  },
-  {
-    name: "Linker Script",
-    type: "data",
-    extensions: [".ld", ".lds"],
-  },
-  {
-    name: "Linux Kernel Module",
-    type: "data",
-    extensions: [".mod"],
-  },
-  {
-    name: "Liquid",
-    type: "markup",
-    extensions: [".liquid"],
   },
   {
     name: "Literate Agda",
@@ -1128,11 +880,6 @@ const languages = [
     extensions: [".ms", ".mcr"],
   },
   {
-    name: "MTML",
-    type: "markup",
-    extensions: [".mtml"],
-  },
-  {
     name: "MUF",
     type: "programming",
     extensions: [".muf", ".m"],
@@ -1146,16 +893,6 @@ const languages = [
     name: "Mako",
     type: "programming",
     extensions: [".mako", ".mao"],
-  },
-  {
-    name: "Markdown",
-    type: "prose",
-    extensions: [".md", ".markdown", ".mkd", ".mkdn", ".mkdown", ".ron"],
-  },
-  {
-    name: "Mask",
-    type: "markup",
-    extensions: [".mask"],
   },
   {
     name: "Mathematica",
@@ -1176,20 +913,6 @@ const languages = [
     name: "Matlab",
     type: "programming",
     extensions: [".matlab", ".m"],
-  },
-  {
-    name: "Maven POM",
-    type: "data",
-  },
-  {
-    name: "Max",
-    type: "programming",
-    extensions: [".maxpat", ".maxhelp", ".maxproj", ".mxt", ".pat"],
-  },
-  {
-    name: "MediaWiki",
-    type: "prose",
-    extensions: [".mediawiki", ".wiki"],
   },
   {
     name: "Mercury",
@@ -1252,11 +975,6 @@ const languages = [
     extensions: [".ncl"],
   },
   {
-    name: "NL",
-    type: "data",
-    extensions: [".nl"],
-  },
-  {
     name: "NSIS",
     type: "programming",
     extensions: [".nsi", ".nsh"],
@@ -1287,19 +1005,9 @@ const languages = [
     extensions: [".nl", ".lisp", ".lsp"],
   },
   {
-    name: "Nginx",
-    type: "markup",
-    extensions: [".nginxconf", ".vhost"],
-  },
-  {
     name: "Nimrod",
     type: "programming",
     extensions: [".nim", ".nimrod"],
-  },
-  {
-    name: "Ninja",
-    type: "data",
-    extensions: [".ninja"],
   },
   {
     name: "Nit",
@@ -1325,11 +1033,6 @@ const languages = [
     name: "OCaml",
     type: "programming",
     extensions: [".ml", ".eliom", ".eliomi", ".ml4", ".mli", ".mll", ".mly"],
-  },
-  {
-    name: "ObjDump",
-    type: "data",
-    extensions: [".objdump"],
   },
   {
     name: "Objective-C",
@@ -1375,11 +1078,6 @@ const languages = [
     name: "OpenSCAD",
     type: "programming",
     extensions: [".scad"],
-  },
-  {
-    name: "Org",
-    type: "prose",
-    extensions: [".org"],
   },
   {
     name: "Ox",
@@ -1497,11 +1195,6 @@ const languages = [
     ],
   },
   {
-    name: "Pickle",
-    type: "data",
-    extensions: [".pkl"],
-  },
-  {
     name: "PicoLisp",
     type: "programming",
     extensions: [".l"],
@@ -1517,11 +1210,6 @@ const languages = [
     extensions: [".pike", ".pmod"],
   },
   {
-    name: "Pod",
-    type: "prose",
-    extensions: [".pod"],
-  },
-  {
     name: "PogoScript",
     type: "programming",
     extensions: [".pogo"],
@@ -1530,11 +1218,6 @@ const languages = [
     name: "Pony",
     type: "programming",
     extensions: [".pony"],
-  },
-  {
-    name: "PostScript",
-    type: "markup",
-    extensions: [".ps", ".eps"],
   },
   {
     name: "PowerShell",
@@ -1555,16 +1238,6 @@ const languages = [
     name: "Propeller Spin",
     type: "programming",
     extensions: [".spin"],
-  },
-  {
-    name: "Protocol Buffer",
-    type: "markup",
-    extensions: [".proto"],
-  },
-  {
-    name: "Public Key",
-    type: "data",
-    extensions: [".asc", ".pub"],
   },
   {
     name: "Puppet",
@@ -1607,11 +1280,6 @@ const languages = [
     ],
   },
   {
-    name: "Python traceback",
-    type: "data",
-    extensions: [".pytb"],
-  },
-  {
     name: "QML",
     type: "programming",
     extensions: [".qml", ".qbs"],
@@ -1627,16 +1295,6 @@ const languages = [
     extensions: [".r", ".rd", ".rsx"],
   },
   {
-    name: "RAML",
-    type: "markup",
-    extensions: [".raml"],
-  },
-  {
-    name: "RDoc",
-    type: "prose",
-    extensions: [".rdoc"],
-  },
-  {
     name: "REALbasic",
     type: "programming",
     extensions: [
@@ -1649,16 +1307,6 @@ const languages = [
     ],
   },
   {
-    name: "RHTML",
-    type: "markup",
-    extensions: [".rhtml"],
-  },
-  {
-    name: "RMarkdown",
-    type: "prose",
-    extensions: [".rmd"],
-  },
-  {
     name: "Racket",
     type: "programming",
     extensions: [".rkt", ".rktd", ".rktl", ".scrbl"],
@@ -1667,11 +1315,6 @@ const languages = [
     name: "Ragel in Ruby Host",
     type: "programming",
     extensions: [".rl"],
-  },
-  {
-    name: "Raw token data",
-    type: "data",
-    extensions: [".raw"],
   },
   {
     name: "Rebol",
@@ -1744,19 +1387,9 @@ const languages = [
     extensions: [".sas"],
   },
   {
-    name: "SCSS",
-    type: "markup",
-    extensions: [".scss"],
-  },
-  {
     name: "SMT",
     type: "programming",
     extensions: [".smt2", ".smt"],
-  },
-  {
-    name: "SPARQL",
-    type: "data",
-    extensions: [".sparql", ".rq"],
   },
   {
     name: "SQF",
@@ -1764,33 +1397,9 @@ const languages = [
     extensions: [".sqf", ".hqf"],
   },
   {
-    name: "SQL",
-    type: "data",
-    extensions: [
-      ".sql",
-      ".cql",
-      ".ddl",
-      ".inc",
-      ".prc",
-      ".tab",
-      ".udf",
-      ".viw",
-    ],
-  },
-  {
     name: "SQLPL",
     type: "programming",
     extensions: [".sql", ".db2"],
-  },
-  {
-    name: "STON",
-    type: "data",
-    extensions: [".ston"],
-  },
-  {
-    name: "SVG",
-    type: "data",
-    extensions: [".svg"],
   },
   {
     name: "Sage",
@@ -1803,19 +1412,9 @@ const languages = [
     extensions: [".sls"],
   },
   {
-    name: "Sass",
-    type: "markup",
-    extensions: [".sass"],
-  },
-  {
     name: "Scala",
     type: "programming",
     extensions: [".scala", ".sbt", ".sc"],
-  },
-  {
-    name: "Scaml",
-    type: "markup",
-    extensions: [".scaml"],
   },
   {
     name: "Scheme",
@@ -1865,11 +1464,6 @@ const languages = [
     extensions: [".sl"],
   },
   {
-    name: "Slim",
-    type: "markup",
-    extensions: [".slim"],
-  },
-  {
     name: "Smali",
     type: "programming",
     extensions: [".smali"],
@@ -1910,11 +1504,6 @@ const languages = [
     extensions: [".do", ".ado", ".doh", ".ihlp", ".mata", ".matah", ".sthlp"],
   },
   {
-    name: "Stylus",
-    type: "markup",
-    extensions: [".styl"],
-  },
-  {
     name: "SuperCollider",
     type: "programming",
     extensions: [".sc", ".scd"],
@@ -1928,11 +1517,6 @@ const languages = [
     name: "SystemVerilog",
     type: "programming",
     extensions: [".sv", ".svh", ".vh"],
-  },
-  {
-    name: "TOML",
-    type: "data",
-    extensions: [".toml"],
   },
   {
     name: "TXL",
@@ -1950,45 +1534,9 @@ const languages = [
     extensions: [".tcsh", ".csh"],
   },
   {
-    name: "TeX",
-    type: "markup",
-    extensions: [
-      ".tex",
-      ".aux",
-      ".bbx",
-      ".bib",
-      ".cbx",
-      ".cls",
-      ".dtx",
-      ".ins",
-      ".lbx",
-      ".ltx",
-      ".mkii",
-      ".mkiv",
-      ".mkvi",
-      ".sty",
-      ".toc",
-    ],
-  },
-  {
-    name: "Tea",
-    type: "markup",
-    extensions: [".tea"],
-  },
-  {
     name: "Terra",
     type: "programming",
     extensions: [".t"],
-  },
-  {
-    name: "Text",
-    type: "prose",
-    extensions: [".txt", ".fr", ".nb", ".ncl", ".no"],
-  },
-  {
-    name: "Textile",
-    type: "prose",
-    extensions: [".textile"],
   },
   {
     name: "Thrift",
@@ -2001,16 +1549,6 @@ const languages = [
     extensions: [".t", ".tu"],
   },
   {
-    name: "Turtle",
-    type: "data",
-    extensions: [".ttl"],
-  },
-  {
-    name: "Twig",
-    type: "markup",
-    extensions: [".twig"],
-  },
-  {
     name: "TypeScript",
     type: "programming",
     extensions: [".ts", ".tsx"],
@@ -2019,11 +1557,6 @@ const languages = [
     name: "Unified Parallel C",
     type: "programming",
     extensions: [".upc"],
-  },
-  {
-    name: "Unity3D Asset",
-    type: "data",
-    extensions: [".anim", ".asset", ".mat", ".meta", ".prefab", ".unity"],
   },
   {
     name: "Uno",
@@ -2094,16 +1627,6 @@ const languages = [
     extensions: [".volt"],
   },
   {
-    name: "Vue",
-    type: "markup",
-    extensions: [".vue"],
-  },
-  {
-    name: "Web Ontology Language",
-    type: "markup",
-    extensions: [".owl"],
-  },
-  {
     name: "WebIDL",
     type: "programming",
     extensions: [".webidl"],
@@ -2117,92 +1640,6 @@ const languages = [
     name: "XC",
     type: "programming",
     extensions: [".xc"],
-  },
-  {
-    name: "XML",
-    type: "data",
-    extensions: [
-      ".xml",
-      ".ant",
-      ".axml",
-      ".ccxml",
-      ".clixml",
-      ".cproject",
-      ".csl",
-      ".csproj",
-      ".ct",
-      ".dita",
-      ".ditamap",
-      ".ditaval",
-      ".dll.config",
-      ".dotsettings",
-      ".filters",
-      ".fsproj",
-      ".fxml",
-      ".glade",
-      ".gml",
-      ".grxml",
-      ".iml",
-      ".ivy",
-      ".jelly",
-      ".jsproj",
-      ".kml",
-      ".launch",
-      ".mdpolicy",
-      ".mm",
-      ".mod",
-      ".mxml",
-      ".nproj",
-      ".nuspec",
-      ".odd",
-      ".osm",
-      ".plist",
-      ".pluginspec",
-      ".props",
-      ".ps1xml",
-      ".psc1",
-      ".pt",
-      ".rdf",
-      ".rss",
-      ".scxml",
-      ".srdf",
-      ".storyboard",
-      ".stTheme",
-      ".sublime-snippet",
-      ".targets",
-      ".tmCommand",
-      ".tml",
-      ".tmLanguage",
-      ".tmPreferences",
-      ".tmSnippet",
-      ".tmTheme",
-      ".ts",
-      ".tsx",
-      ".ui",
-      ".urdf",
-      ".ux",
-      ".vbproj",
-      ".vcxproj",
-      ".vssettings",
-      ".vxml",
-      ".wsdl",
-      ".wsf",
-      ".wxi",
-      ".wxl",
-      ".wxs",
-      ".x3d",
-      ".xacro",
-      ".xaml",
-      ".xib",
-      ".xlf",
-      ".xliff",
-      ".xmi",
-      ".xml.dist",
-      ".xproj",
-      ".xsd",
-      ".xul",
-      ".zcml",
-    ],
   },
   {
     name: "XPages",
@@ -2247,24 +1684,6 @@ const languages = [
     extensions: [".xtend"],
   },
   {
-    name: "YAML",
-    type: "data",
-    extensions: [
-      ".yml",
-      ".reek",
-      ".rviz",
-      ".sublime-syntax",
-      ".syntax",
-      ".yaml",
-      ".yaml-tmlanguage",
-    ],
-  },
-  {
-    name: "YANG",
-    type: "data",
-    extensions: [".yang"],
-  },
-  {
     name: "Yacc",
     type: "programming",
     extensions: [".y", ".yacc", ".yy"],
@@ -2280,19 +1699,9 @@ const languages = [
     extensions: [".zimpl", ".zmpl", ".zpl"],
   },
   {
-    name: "desktop",
-    type: "data",
-    extensions: [".desktop", ".desktop.in"],
-  },
-  {
     name: "eC",
     type: "programming",
     extensions: [".ec", ".eh"],
-  },
-  {
-    name: "edn",
-    type: "data",
-    extensions: [".edn"],
   },
   {
     name: "fish",
@@ -2313,11 +1722,6 @@ const languages = [
     name: "ooc",
     type: "programming",
     extensions: [".ooc"],
-  },
-  {
-    name: "reStructuredText",
-    type: "prose",
-    extensions: [".rst", ".rest", ".rest.txt", ".rst.txt"],
   },
   {
     name: "wisp",
