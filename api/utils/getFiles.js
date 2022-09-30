@@ -9,10 +9,10 @@ const getFiles = async (url, request, access_token) => {
   const totalFolders = tree.filter((file) => file.type === "tree");
 
   const filess = async (folder) => {
-    const { url } = folder;
+    const { url, path } = folder;
 
     // don't loop for node_modules
-    if (url.includes("node_modules")) {
+    if (path === "node_modules") {
       return;
     }
 
@@ -36,18 +36,10 @@ const getFiles = async (url, request, access_token) => {
 
   for (const folder of totalFolders) {
     await filess(folder);
-
-    // remove the current folder from the totalFolders
-    const index = totalFolders.indexOf(folder);
-    totalFolders.splice(index, 1);
   }
 
   //   console.log("totalFiles: ", totalFiles.length);
   //   console.log("totalFolders: ", totalFolders.length);
-  console.log(`
-
-  
-`);
 
   return totalFiles;
 };

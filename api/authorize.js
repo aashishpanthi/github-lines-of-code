@@ -37,6 +37,11 @@ const authorize = async (req, res) => {
           console.log(`Total files of ${repo.name} are: ${files.length}`);
           totalFiles.push(...files);
         }
+
+        console.log(`
+    
+        
+        `);
       } catch (error) {
         console.log(error);
       }
