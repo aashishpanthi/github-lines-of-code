@@ -15,11 +15,11 @@
       "function": {
         "githublocAuthentication": {
           "deploymentBucketName": "amplify-githublinesofcode-dev-195351-deployment",
-          "s3Key": "amplify-builds/githublocAuthentication-48564c6d6a5263536b48-build.zip"
+          "s3Key": "amplify-builds/githublocAuthentication-626f50774a584b326f59-build.zip"
         },
         "gLOCcardDetails": {
           "deploymentBucketName": "amplify-githublinesofcode-dev-195351-deployment",
-          "s3Key": "amplify-builds/gLOCcardDetails-4c51636471644a61384d-build.zip"
+          "s3Key": "amplify-builds/gLOCcardDetails-5646626b5669386a4748-build.zip"
         }
       }
     }

@@ -7,6 +7,7 @@ import LoadingButton from "@mui/lab/LoadingButton";
 import CloseIcon from "@mui/icons-material/Close";
 
 import styles from "./styles/dashboard.module.css";
+import { API } from "aws-amplify";
 
 const Dashboard = () => {
   const user = useContext(UserContext);
@@ -48,8 +49,23 @@ const Dashboard = () => {
     </IconButton>
   );
 
+  const getCardDetails = async () => {
+    console.log(user);
+    try {
+      const data = await API.get("locapi", `/user/${user.username}`);
+      console.log("data", data);
+      openToast("Card details fetched successfully", "success");
+    } catch (error) {
+      console.log("error", error);
+      openToast("Error fetching card details", "error");
+    }
+  };
+
   useEffect(() => {
     //check if user already has a card or not
+    if (user) {
+      getCardDetails();
+    }
   }, []);
 
   if (!user) {

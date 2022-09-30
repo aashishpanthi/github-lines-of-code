@@ -177,14 +177,9 @@ app.post(path, async function (req, res) {
 
   const { code } = req.body;
 
-  console.log("code", code);
-
   const access_token = await getAccessTokenFromCode(code, request);
 
-  console.log("access_token", access_token);
-
   const user = await getUserData(access_token, request);
-  console.log("user", user);
 
   let putItemParams = {
     TableName: tableName,

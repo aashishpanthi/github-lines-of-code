@@ -18,7 +18,7 @@ function Login() {
           code,
         },
       }).then((data) => {
-        setUser(data);
+        setUser(data.data);
       });
     }
   };
