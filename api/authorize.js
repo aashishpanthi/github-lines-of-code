@@ -47,8 +47,7 @@ const authorize = async (req, res) => {
       }
     }
 
-    console.log("I am running first");
-    console.log("totalFiles: ", totalFiles);
+    console.log("totalFiles: ", totalFiles.length);
   } catch (error) {
     console.log(error);
   }

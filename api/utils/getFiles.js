@@ -38,9 +38,6 @@ const getFiles = async (url, request, access_token) => {
     await filess(folder);
   }
 
-  //   console.log("totalFiles: ", totalFiles.length);
-  //   console.log("totalFolders: ", totalFolders.length);
-
   return totalFiles;
 };
 

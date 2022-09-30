@@ -5,7 +5,7 @@ const getSha = async (repo, request, access_token) => {
       access_token
     );
 
-    if (data?.length > 0) {
+    if (data) {
       const { sha } = data[0].commit.tree;
 
       return sha;
