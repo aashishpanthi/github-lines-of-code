@@ -2,6 +2,7 @@ const AWS = require("aws-sdk");
 const awsServerlessExpressMiddleware = require("aws-serverless-express/middleware");
 const bodyParser = require("body-parser");
 const express = require("express");
+const getCardDetails = require("./controllers/getCardDetails.js");
 
 AWS.config.update({ region: process.env.TABLE_REGION });
 
@@ -165,22 +166,30 @@ app.put(path, function (req, res) {
  * HTTP post method for insert object *
  *************************************/
 
-app.post(path, function (req, res) {
+app.post(path, async function (req, res) {
   if (userIdPresent) {
     req.body["userId"] =
       req.apiGateway.event.requestContext.identity.cognitoIdentityId || UNAUTH;
   }
 
+  const { access_token, username, photo } = req.body;
+
+  const cardDetails = await getCardDetails(access_token, username, photo);
+
   let putItemParams = {
     TableName: tableName,
-    Item: req.body,
+    Item: cardDetails,
   };
   dynamodb.put(putItemParams, (err, data) => {
     if (err) {
       res.statusCode = 500;
-      res.json({ error: err, url: req.url, body: req.body });
+      res.json({ error: err, url: req.url, body: cardDetails });
     } else {
-      res.json({ success: "post call succeed!", url: req.url, data: data });
+      res.json({
+        success: "post call succeed!",
+        url: req.url,
+        data: cardDetails,
+      });
     }
   });
 });

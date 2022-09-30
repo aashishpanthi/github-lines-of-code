@@ -199,6 +199,7 @@ app.post(path, async function (req, res) {
         data: {
           username: user.login,
           access_token: access_token,
+          photo: user.avatar_url,
         },
       });
     }

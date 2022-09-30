@@ -20,9 +20,27 @@ const Dashboard = () => {
     severity: "",
   });
 
-  const handleClick = () => {
+  const handleClick = async () => {
     setLoading(true);
     openToast("Wait for couple of minutes...", "info");
+
+    try {
+      const response = await API.post("locapi", "/user/" + user.username, {
+        body: {
+          username: user.username,
+          access_token: user.access_token,
+          photo: user.photo,
+        },
+      });
+
+      console.log(response);
+      openToast("Successfully generated your card", "success");
+      setLoading(false);
+    } catch (error) {
+      console.log(error);
+      openToast("Error generating card", "error");
+      setLoading(false);
+    }
   };
 
   const openToast = (message, severity) => {

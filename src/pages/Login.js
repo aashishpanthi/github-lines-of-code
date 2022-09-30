@@ -2,6 +2,7 @@ import { useEffect, useContext } from "react";
 import { Navigate } from "react-router-dom";
 import { UserContext, UserUpdateContext } from "../UserContext";
 import { API } from "aws-amplify";
+import { CircularProgress } from "@mui/material";
 
 function Login() {
   const user = useContext(UserContext);
@@ -29,7 +30,16 @@ function Login() {
 
   // return a loading screen material ui
   if (user === null) {
-    return <div>Loading...</div>;
+    return (
+      <CircularProgress
+        style={{
+          position: "absolute",
+          top: "50%",
+          left: "50%",
+          transform: "translate(-50%, -50%)",
+        }}
+      />
+    );
   }
 
   if (user) {
