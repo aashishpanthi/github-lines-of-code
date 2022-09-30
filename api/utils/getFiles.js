@@ -1,3 +1,4 @@
+const getProgrammingFiles = require("./getProgrammingFiles");
 const getTree = require("./getTree");
 
 const getFiles = async (url, request, access_token) => {
@@ -38,7 +39,9 @@ const getFiles = async (url, request, access_token) => {
     await filess(folder);
   }
 
-  return totalFiles;
+  const programming_files = getProgrammingFiles(totalFiles);
+
+  return programming_files;
 };
 
 module.exports = getFiles;
