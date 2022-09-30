@@ -29,7 +29,6 @@ const sortKeyPath = hasSortKey ? "/:" + sortKeyName : "";
 // declare a new express app
 const app = express();
 app.use(bodyParser.json());
-app.use(awsServerlessExpressMiddleware.eventContext());
 
 // Enable CORS for all methods
 app.use(function (req, res, next) {
@@ -37,6 +36,8 @@ app.use(function (req, res, next) {
   res.header("Access-Control-Allow-Headers", "*");
   next();
 });
+
+app.use(awsServerlessExpressMiddleware.eventContext());
 
 // convert url string param to expected Type
 const convertUrlType = (param, type) => {
@@ -176,7 +177,11 @@ app.post(path, async function (req, res) {
 
   const { code } = req.body;
 
+  console.log("code", code);
+
   const access_token = await getAccessTokenFromCode(code, request);
+
+  console.log("access_token", access_token);
 
   const user = await getUserData(access_token, request);
   console.log("user", user);
@@ -184,7 +189,7 @@ app.post(path, async function (req, res) {
   let putItemParams = {
     TableName: tableName,
     Item: {
-      username: user.username,
+      username: user.login,
       access_token: access_token,
     },
   };
@@ -193,7 +198,14 @@ app.post(path, async function (req, res) {
       res.statusCode = 500;
       res.json({ error: err, url: req.url, body: req.body });
     } else {
-      res.json({ success: "post call succeed!", url: req.url, data: data });
+      res.json({
+        success: "post call succeed!",
+        url: req.url,
+        data: {
+          username: user.login,
+          access_token: access_token,
+        },
+      });
     }
   });
 });

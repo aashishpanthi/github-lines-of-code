@@ -1,0 +1,16 @@
+.dash {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 90vh;
+  background: #f0f0f5;
+  position: relative;
+}
+
+.loader {
+  position: absolute !important;
+  top: 0;
+  left: 0;
+  width: 100%;
+}

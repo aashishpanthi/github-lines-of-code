@@ -15,7 +15,7 @@
       "function": {
         "githublocAuthentication": {
           "deploymentBucketName": "amplify-githublinesofcode-dev-195351-deployment",
-          "s3Key": "amplify-builds/githublocAuthentication-6a6d623249734a6c434f-build.zip"
+          "s3Key": "amplify-builds/githublocAuthentication-48564c6d6a5263536b48-build.zip"
         },
         "gLOCcardDetails": {
           "deploymentBucketName": "amplify-githublinesofcode-dev-195351-deployment",
