@@ -6,11 +6,16 @@ const getFiles = async (url, request, access_token) => {
   const tree = await getTree(url, request, access_token);
 
   const totalFiles = tree.filter((file) => file.type === "blob");
+  totalFiles.forEach((file) => {
+    file.src = "";
+  });
 
   const totalFolders = tree.filter((file) => file.type === "tree");
 
-  const filess = async (folder) => {
+  const filess = async (folder, prevPath) => {
     const { url, path } = folder;
+
+    let src = prevPath ? `${prevPath}/${path}/` : `${path}/`;
 
     // don't loop for node_modules
     if (path === "node_modules") {
@@ -21,6 +26,9 @@ const getFiles = async (url, request, access_token) => {
       const data = await getTree(url, request, access_token);
 
       const files = data.filter((file) => file.type === "blob");
+      files.forEach((file) => {
+        file.src = src;
+      });
       totalFiles.push(...files);
 
       console.log("files: ", files.length);
@@ -28,7 +36,7 @@ const getFiles = async (url, request, access_token) => {
       const folders = data.filter((file) => file.type === "tree");
 
       for (const folder of folders) {
-        await filess(folder);
+        await filess(folder, src);
       }
     } catch (error) {
       console.log(error.message);

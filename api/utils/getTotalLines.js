@@ -1,30 +1,57 @@
-const request = require("./request");
-
-const getTotalLines = async (files, access_token) => {
-  let totalLines = 0;
+const getTotalLines = async (files, request, access_token) => {
+  let totalPrivateLines = 0;
+  let totalPublicLines = 0;
+  let totalPrivateSize = 0;
+  let totalPublicSize = 0;
 
   for (const file of files) {
-    const { path, branch, url } = file;
+    const { path, branch, url, src, private } = file;
 
     const data = url
       .replace("api.github", "raw.githubusercontent")
       .replace("/repos", "")
       .split("/git/blobs")[0];
-    const rawUrl = `${data}/${branch}/${path}`;
 
-    const fileData = await request(rawUrl, access_token);
+    let rawUrl = `${data}/${branch}/`;
+    if (src) {
+      rawUrl += `${src}/${path}`;
+    } else {
+      rawUrl += `${path}`;
+    }
 
-    // seperte the file into lines
-    const separateLines = fileData.split(/\r?\n|\r|\n/g);
+    console.log(rawUrl);
 
-    // count the lines
-    const lines = separateLines.length;
+    try {
+      const fileData = await request(rawUrl, access_token);
 
-    // add the lines
-    totalLines += lines;
+      console.log(fileData);
+
+      // seperte the file into lines
+      const separateLines = fileData.split(/\r?\n|\r|\n/g);
+
+      // count the lines
+      const lines = separateLines.length;
+      console.log(lines);
+
+      // add the lines
+      if (private) {
+        totalPrivateLines += lines;
+        totalPrivateSize += file.size;
+      } else {
+        totalPublicLines += lines;
+        totalPublicSize += file.size;
+      }
+    } catch (error) {
+      console.log(error.message);
+    }
   }
 
-  return totalLines;
+  return {
+    totalPrivateLines,
+    totalPublicLines,
+    totalPrivateSize,
+    totalPublicSize,
+  };
 };
 
 module.exports = getTotalLines;
