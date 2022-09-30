@@ -1,0 +1,27 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-githublinesofcode-dev-195351-authRole",
+      "UnauthRoleArn": "arn:aws:iam::712901067579:role/amplify-githublinesofcode-dev-195351-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::712901067579:role/amplify-githublinesofcode-dev-195351-authRole",
+      "Region": "ap-southeast-1",
+      "DeploymentBucketName": "amplify-githublinesofcode-dev-195351-deployment",
+      "UnauthRoleName": "amplify-githublinesofcode-dev-195351-unauthRole",
+      "StackName": "amplify-githublinesofcode-dev-195351",
+      "StackId": "arn:aws:cloudformation:ap-southeast-1:712901067579:stack/amplify-githublinesofcode-dev-195351/6a224b70-40c9-11ed-ae69-0a92bd0423b6",
+      "AmplifyAppId": "d35hk11gzwtpyz"
+    },
+    "categories": {
+      "function": {
+        "githublocAuthentication": {
+          "deploymentBucketName": "amplify-githublinesofcode-dev-195351-deployment",
+          "s3Key": "amplify-builds/githublocAuthentication-6a6d623249734a6c434f-build.zip"
+        },
+        "gLOCcardDetails": {
+          "deploymentBucketName": "amplify-githublinesofcode-dev-195351-deployment",
+          "s3Key": "amplify-builds/gLOCcardDetails-4c51636471644a61384d-build.zip"
+        }
+      }
+    }
+  }
+}

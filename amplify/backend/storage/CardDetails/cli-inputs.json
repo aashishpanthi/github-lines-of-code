@@ -1,0 +1,10 @@
+{
+  "resourceName": "CardDetails",
+  "tableName": "CardDetails",
+  "partitionKey": {
+    "fieldName": "username",
+    "fieldType": "string"
+  },
+  "gsi": [],
+  "triggerFunctions": []
+}

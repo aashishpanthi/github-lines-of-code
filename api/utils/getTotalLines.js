@@ -3,9 +3,18 @@ const getTotalLines = async (files, request, access_token) => {
   let totalPublicLines = 0;
   let totalPrivateSize = 0;
   let totalPublicSize = 0;
+  let languageSize = {};
 
   for (const file of files) {
-    const { path, branch, url, src, private } = file;
+    const { path, branch, url, src, private, language, size } = file;
+
+    // save the language with its size
+    const lang = {
+      ...languageSize,
+      [language]: size + (languageSize[language] || 0),
+    };
+
+    languageSize = lang;
 
     const data = url
       .replace("api.github", "raw.githubusercontent")
@@ -51,6 +60,7 @@ const getTotalLines = async (files, request, access_token) => {
     totalPublicLines,
     totalPrivateSize,
     totalPublicSize,
+    languageSize,
   };
 };
 

@@ -12,12 +12,8 @@ const getProgrammingFiles = async (files) => {
         language.extensions.includes(extension) &&
         language.type === "programming"
       ) {
-        return {
-          size: file.size,
-          language: language.name,
-          url: file.url,
-          path: file.path,
-        };
+        file.language = language.name;
+        return file;
       }
     }
   });

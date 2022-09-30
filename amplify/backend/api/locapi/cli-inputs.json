@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "paths": {
+    "/user/login/callback": {
+      "name": "/user/login/callback",
+      "lambdaFunction": "githublocAuthentication",
+      "permissions": {
+        "setting": "open"
+      }
+    },
+    "/user/{username}": {
+      "name": "/user/{username}",
+      "lambdaFunction": "gLOCcardDetails",
+      "permissions": {
+        "setting": "open"
+      }
+    }
+  }
+}
