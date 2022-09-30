@@ -1,6 +1,6 @@
 const getRepos = async (request, access_token) => {
   const response = await request(
-    "https://api.github.com/user/repos",
+    "https://api.github.com/user/repos?per_page=1000",
     access_token
   );
 

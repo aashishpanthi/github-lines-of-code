@@ -5,17 +5,16 @@ const request = async (url, options, method = "get") => {
     if (method == "post") {
       const { data } = await axios.post(url, options);
 
-      console.log("post", data);
       return data;
     } else {
       const access_token = options;
       const { data } = await axios.get(url, {
         headers: {
           Authorization: `token ${access_token}`,
+          "User-Agent": "github-lines-of-code",
         },
       });
 
-      console.log("get", data);
       return data;
     }
   } catch (err) {

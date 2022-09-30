@@ -1,13 +1,18 @@
 const getSha = async (repo, request, access_token) => {
-  const data = await request(
-    `https://api.github.com/repos/${repo.name}/commits`,
-    access_token
-  );
-  console.log(data);
+  try {
+    const data = await request(
+      `https://api.github.com/repos/${repo.name}/commits`,
+      access_token
+    );
 
-  const { sha } = data[0].commit.tree;
+    if (data?.length > 0) {
+      const { sha } = data[0].commit.tree;
 
-  return sha;
+      return sha;
+    }
+  } catch (error) {
+    console.log(error.message);
+  }
 };
 
 module.exports = getSha;

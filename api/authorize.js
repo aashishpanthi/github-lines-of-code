@@ -4,41 +4,46 @@ const getAccessTokenFromCode = require("./utils/getAccessTokenFromCode");
 const getUserData = require("./utils/getUserData");
 const getRepos = require("./utils/getRepos");
 const getSha = require("./utils/getSha");
+const getFiles = require("./utils/getFiles");
 
 const authorize = async (req, res) => {
   const code = req.query.code;
 
   const access_token = await getAccessTokenFromCode(code, request);
 
-  const user = await getUserData(access_token, request);
-  console.log("user", user);
+  const totalFiles = [];
+
+  //   const user = await getUserData(access_token, request);
+  //   console.log("user", user);
 
   try {
     const repos = await getRepos(request, access_token);
-    console.log(repos);
+    console.log("Repos:", repos.length);
 
     // go to every repository and fetch the code
-    repos.forEach(async (repo) => {
+    for (const repo of repos) {
       // get the sha from the commits
       try {
         const sha = await getSha(repo, request, access_token);
 
-        // get the tree from the sha
-        const tree = await request(
-          `https://api.github.com/repos/${repo.name}/git/trees/${sha}`,
-          access_token
-        );
+        if (sha) {
+          // get the tree from the sha
+          const files = await getFiles(
+            `https://api.github.com/repos/${repo.name}/git/trees/${sha}`,
+            request,
+            access_token
+          );
 
-        if (tree.tree.type == "tree") {
-          console.log(tree);
-        } else if (tree.tree.type == "blob") {
-          // push the file to the array
-          console.log(tree);
+          console.log(`Total files of ${repo.name} are: ${files.length}`);
+          totalFiles.push(...files);
         }
       } catch (error) {
         console.log(error);
       }
-    });
+    }
+
+    console.log("I am running first");
+    console.log("totalFiles: ", totalFiles);
   } catch (error) {
     console.log(error);
   }
@@ -52,7 +57,8 @@ const authorize = async (req, res) => {
 
   // take the sum of all lines of code
 
-  res.send("wait");
+  //   res.send("wait");
+  res.send(totalFiles);
 };
 
 module.exports = authorize;
