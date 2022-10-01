@@ -33,8 +33,6 @@ const getTotalLines = async (files, request, access_token) => {
     try {
       const fileData = await request(rawUrl, access_token);
 
-      console.log(fileData);
-
       // seperte the file into lines
       const separateLines = fileData.split(/\r?\n|\r|\n/g);
 

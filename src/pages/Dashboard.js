@@ -25,7 +25,7 @@ const Dashboard = () => {
     openToast("Wait for couple of minutes...", "info");
 
     try {
-      const response = await API.post("locapi", "/user/" + user.username, {
+      const response = await API.post("locapi", `/user/${user.username}`, {
         body: {
           username: user.username,
           access_token: user.access_token,

@@ -27,7 +27,6 @@ const sortKeyPath = hasSortKey ? "/:" + sortKeyName : "";
 // declare a new express app
 const app = express();
 app.use(bodyParser.json());
-app.use(awsServerlessExpressMiddleware.eventContext());
 
 // Enable CORS for all methods
 app.use(function (req, res, next) {
@@ -35,6 +34,8 @@ app.use(function (req, res, next) {
   res.header("Access-Control-Allow-Headers", "*");
   next();
 });
+
+app.use(awsServerlessExpressMiddleware.eventContext());
 
 // convert url string param to expected Type
 const convertUrlType = (param, type) => {
