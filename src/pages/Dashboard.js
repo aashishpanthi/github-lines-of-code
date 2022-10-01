@@ -47,8 +47,11 @@ const Dashboard = () => {
       setLoading(false);
     } catch (error) {
       console.log(error);
-      openToast("Error generating card", "error");
-      setLoading(false);
+      setTimeout(() => {
+        openToast("Error generating card", "error");
+        setLoading(false);
+        getCardDetails();
+      }, 800000);
     }
   };
 
