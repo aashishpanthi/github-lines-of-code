@@ -19,7 +19,7 @@
         },
         "gLOCcardDetails": {
           "deploymentBucketName": "amplify-githublinesofcode-dev-195351-deployment",
-          "s3Key": "amplify-builds/gLOCcardDetails-7466636b54756e4a4f4d-build.zip"
+          "s3Key": "amplify-builds/gLOCcardDetails-52776f755a6530477873-build.zip"
         }
       },
       "hosting": {

@@ -14,3 +14,7 @@
   left: 0;
   width: 100%;
 }
+
+.buttons button {
+  margin: 0 10px;
+}

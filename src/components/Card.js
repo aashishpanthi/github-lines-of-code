@@ -15,9 +15,11 @@ const Card = ({ data }) => {
 
   let totalLines_forLineGraph = 0;
 
-  languages.map((language) => {
-    totalLines_forLineGraph += language.lines;
+  Object.keys(languages).map((language) => {
+    totalLines_forLineGraph += parseInt(languages[language]);
   });
+
+  console.log(totalLines_forLineGraph);
 
   const colors = ["#FFC100", "#1E9ADF", "#96C69F", "#E6EBED", "#593C97"];
 
@@ -43,27 +45,33 @@ const Card = ({ data }) => {
       <div className={styles.card__body}>
         <h2>Most Used Languages</h2>
         <div className={styles.lineGraph}>
-          {languages.map((language, i) => (
+          {Object.keys(languages).map((language, i) => (
             <span
               className={styles.languagePart}
-              key={language.name}
+              key={language}
               style={{
-                width: `${(language.lines / totalLines_forLineGraph) * 100}%`,
+                width: `${
+                  (languages[language] / totalLines_forLineGraph) * 100
+                }%`,
                 backgroundColor: colors[i],
               }}
             ></span>
           ))}
         </div>
         <div className={styles.languages}>
-          {languages.map((language, i) => (
-            <p className={styles.language} key={language.name}>
+          {Object.keys(languages).map((language, i) => (
+            <p className={styles.language} key={language}>
               <span
                 className={styles.bubble}
                 style={{ backgroundColor: colors[i] }}
               ></span>
-              <span className={styles.languageName}>{language.name}</span>
+              <span className={styles.languageName}>{language}</span>
               <span className={styles.languageLines}>
-                {((language.lines / totalLines_forLineGraph) * 100).toFixed(2)}%
+                {(
+                  (languages[language] / totalLines_forLineGraph) *
+                  100
+                ).toFixed(2)}
+                %
               </span>
             </p>
           ))}

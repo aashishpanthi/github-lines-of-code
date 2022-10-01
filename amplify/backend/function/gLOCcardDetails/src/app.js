@@ -19,7 +19,7 @@ const partitionKeyType = "S";
 const sortKeyName = "";
 const sortKeyType = "";
 const hasSortKey = sortKeyName !== "";
-const path = "/user/:username";
+const path = "/user";
 const UNAUTH = "UNAUTH";
 const hashKeyPath = "/:" + partitionKeyName;
 const sortKeyPath = hasSortKey ? "/:" + sortKeyName : "";
@@ -62,6 +62,7 @@ app.get(path + hashKeyPath, function (req, res) {
       req.apiGateway.event.requestContext.identity.cognitoIdentityId || UNAUTH,
     ];
   } else {
+    console.log(req.params[partitionKeyName]);
     try {
       condition[partitionKeyName]["AttributeValueList"] = [
         convertUrlType(req.params[partitionKeyName], partitionKeyType),
@@ -72,10 +73,14 @@ app.get(path + hashKeyPath, function (req, res) {
     }
   }
 
+  console.log("condition", condition);
+
   let queryParams = {
     TableName: tableName,
     KeyConditions: condition,
   };
+
+  console.log("query params", queryParams);
 
   dynamodb.query(queryParams, (err, data) => {
     if (err) {

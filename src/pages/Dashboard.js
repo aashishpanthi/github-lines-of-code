@@ -2,9 +2,16 @@ import { UserContext } from "../UserContext";
 import { useContext, useEffect, useState } from "react";
 import { Navigate } from "react-router-dom";
 import Page from "../components/Page";
-import { Container, Snackbar, LinearProgress, IconButton } from "@mui/material";
+import {
+  Container,
+  Snackbar,
+  LinearProgress,
+  IconButton,
+  Button,
+} from "@mui/material";
 import LoadingButton from "@mui/lab/LoadingButton";
 import CloseIcon from "@mui/icons-material/Close";
+import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 
 import styles from "./styles/dashboard.module.css";
 import { API } from "aws-amplify";
@@ -12,6 +19,7 @@ import { API } from "aws-amplify";
 const Dashboard = () => {
   const user = useContext(UserContext);
   const [loading, setLoading] = useState(false);
+  const [isOldUser, setIsOldUser] = useState(false);
 
   // state for the toast
   const [toast, setToast] = useState({
@@ -25,7 +33,7 @@ const Dashboard = () => {
     openToast("Wait for couple of minutes...", "info");
 
     try {
-      const response = await API.post("locapi", `/user/${user.username}`, {
+      const response = await API.post("locapi", `/user`, {
         body: {
           username: user.username,
           access_token: user.access_token,
@@ -35,6 +43,7 @@ const Dashboard = () => {
 
       console.log(response);
       openToast("Successfully generated your card", "success");
+      getCardDetails();
       setLoading(false);
     } catch (error) {
       console.log(error);
@@ -72,11 +81,17 @@ const Dashboard = () => {
     try {
       const data = await API.get("locapi", `/user/${user.username}`);
       console.log("data", data);
+      setIsOldUser(true);
       openToast("Card details fetched successfully", "success");
     } catch (error) {
       console.log("error", error);
       openToast("Error fetching card details", "error");
     }
+  };
+
+  const openCard = () => {
+    window.location.href = `/card?user=${user.username}`;
+    return;
   };
 
   useEffect(() => {
@@ -95,15 +110,28 @@ const Dashboard = () => {
       <Container>
         <div className={styles.dash}>
           {loading && <LinearProgress className={styles.loader} />}
-          <LoadingButton
-            onClick={handleClick}
-            loading={loading}
-            loadingIndicator="Scanning repos..."
-            variant="outlined"
-            size="large"
-          >
-            Generate your custom GLOC card
-          </LoadingButton>
+          <div className={styles.buttons}>
+            <Button
+              size="large"
+              onClick={openCard}
+              variant="contained"
+              color="primary"
+              endIcon={<OpenInNewIcon />}
+            >
+              View your card
+            </Button>
+            <LoadingButton
+              onClick={handleClick}
+              loading={loading}
+              loadingIndicator="Scanning repos..."
+              variant="outlined"
+              size="large"
+            >
+              {setIsOldUser
+                ? `Generate a new G-LOC card`
+                : `Generate your custom GLOC card`}
+            </LoadingButton>
+          </div>
         </div>
         <Snackbar
           open={toast.open}

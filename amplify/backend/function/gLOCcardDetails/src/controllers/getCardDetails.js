@@ -60,19 +60,18 @@ const getCardDetails = async (access_token, username, photo) => {
       totalPublicSize,
       languageSize,
     });
+
+    const cardDetails = {
+      username,
+      photo,
+      privateRepo: totalPrivateLines,
+      publicRepo: totalPublicLines,
+      languages: languageSize,
+    };
+    return cardDetails;
   } catch (error) {
     console.log(error);
   }
-
-  const cardDetails = {
-    username,
-    photo,
-    privateRepo: totalPrivateLines,
-    publicRepo: totalPublicLines,
-    languages: languageSize,
-  };
-
-  return cardDetails;
 };
 
 module.exports = getCardDetails;

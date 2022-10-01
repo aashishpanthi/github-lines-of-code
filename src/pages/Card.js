@@ -6,36 +6,7 @@ import styles from "./styles/card.module.css";
 import { toPng } from "html-to-image";
 import { copyImageToClipboard } from "copy-image-clipboard";
 import CloseIcon from "@mui/icons-material/Close";
-
-const data = {
-  username: "aashishpanthi",
-  photo: "https://avatars.githubusercontent.com/u/60884239?v=4",
-  totalLines: 102000,
-  publicRepo: 42000,
-  privateRepo: 60000,
-  languages: [
-    {
-      name: "JavaScript",
-      lines: 100,
-    },
-    {
-      name: "Python",
-      lines: 50,
-    },
-    {
-      name: "C#",
-      lines: 20,
-    },
-    {
-      name: "HTML",
-      lines: 75,
-    },
-    {
-      name: "Java",
-      lines: 40,
-    },
-  ],
-};
+import { API } from "aws-amplify";
 
 const Card = () => {
   const navigate = useNavigate();
@@ -48,6 +19,16 @@ const Card = () => {
     open: false,
     message: "",
     severity: "",
+  });
+
+  //state for data
+  const [data, setData] = useState({
+    username: "",
+    photo: "",
+    privateRepo: 0,
+    publicRepo: 0,
+    languages: [],
+    totalLines: 0,
   });
 
   const [searchParams] = useSearchParams();
@@ -122,6 +103,44 @@ const Card = () => {
       <CloseIcon fontSize="small" />
     </IconButton>
   );
+
+  const getCardDetails = async () => {
+    console.log(query);
+    try {
+      const data = await API.get("locapi", `/user/${query}`);
+      console.log("data", data);
+
+      const resData = data[0];
+      console.log("resData", resData);
+
+      // pnly return five keys with highest values
+      const languages = Object.keys(resData.languages)
+        .sort((a, b) => resData.languages[b] - resData.languages[a])
+        .slice(0, 5)
+        .reduce((obj, key) => {
+          obj[key] = resData.languages[key];
+          return obj;
+        }, {});
+
+      resData.languages = languages;
+
+      setData({
+        ...resData,
+        totalLines: resData.privateRepo + resData.publicRepo,
+      });
+
+      openToast("Card details fetched successfully", "success");
+    } catch (error) {
+      console.log("error", error);
+      openToast("Error fetching card details", "error");
+    }
+  };
+
+  useEffect(() => {
+    if (query) {
+      getCardDetails();
+    }
+  }, [query]);
 
   return (
     <div className={styles.container}>

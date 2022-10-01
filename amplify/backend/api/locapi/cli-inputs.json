@@ -8,8 +8,8 @@
         "setting": "open"
       }
     },
-    "/user/{username}": {
-      "name": "/user/{username}",
+    "/user": {
+      "name": "/user",
       "lambdaFunction": "gLOCcardDetails",
       "permissions": {
         "setting": "open"
