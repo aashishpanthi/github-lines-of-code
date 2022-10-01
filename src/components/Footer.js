@@ -8,13 +8,22 @@ const Footer = () => {
   return (
     <footer>
       <div className={styles.appInfo}>
-        <a href="https://youtube.com/" className={styles.appLink}>
+        <a
+          href="https://www.youtube.com/channel/UCRtrK127Ul0J54vWq6jIhuw"
+          className={styles.appLink}
+        >
           Demo video
         </a>
-        <a href="https://blog.aashish-panthi.com.np" className={styles.appLink}>
+        <a
+          href="https://blog.aashish-panthi.com.np/introducing-gloc-count-your-lines-of-code"
+          className={styles.appLink}
+        >
           Full guide
         </a>
-        <a href="https://github.com/aashishpanthi" className={styles.appLink}>
+        <a
+          href="https://github.com/aashishpanthi/github-lines-of-code"
+          className={styles.appLink}
+        >
           Source code
         </a>
       </div>
